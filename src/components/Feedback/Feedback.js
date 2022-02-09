@@ -11,16 +11,22 @@ export default class Feedback extends Component {
     bad: 0,
   };
 
-  handleGood = evt => {
-    console.log('Good button was clicked!', evt);
+  handleGood = () => {
+    this.setState(prevState => {
+      return { good: prevState.good + 1 };
+    });
   };
 
-  handleNeutral = evt => {
-    console.log('Neutral button was clicked!', evt);
+  handleNeutral = () => {
+    this.setState(prevState => {
+      return { neutral: prevState.neutral + 1 };
+    });
   };
 
-  handleBad = evt => {
-    console.log('Bad button was clicked!', evt);
+  handleBad = () => {
+    this.setState(prevState => {
+      return { bad: prevState.bad + 1 };
+    });
   };
 
   render() {
@@ -44,9 +50,9 @@ export default class Feedback extends Component {
           <h2 className="title">Statistics</h2>
 
           <ul className="list">
-            <li className="item">Good</li>
-            <li className="item">Neutral</li>
-            <li className="item">Bad</li>
+            <li className="item">Good:{this.state.good}</li>
+            <li className="item">Neutral:{this.state.neutral}</li>
+            <li className="item">Bad:{this.state.bad}</li>
           </ul>
         </div>
       </section>
