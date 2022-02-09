@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Feedback extends Component {
   static defaultProps = {
     initialFeedback: 0,
   };
 
-  static propTypes = {};
+  static propTypes = {
+    initialFeedback: PropTypes.number.isRequired,
+  };
 
   state = {
     good: this.props.initialFeedback,
