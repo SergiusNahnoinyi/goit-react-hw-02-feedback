@@ -5,6 +5,12 @@ export default class Feedback extends Component {
 
   static propTypes = {};
 
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
+
   handleGood = evt => {
     console.log('Good button was clicked!', evt);
   };
