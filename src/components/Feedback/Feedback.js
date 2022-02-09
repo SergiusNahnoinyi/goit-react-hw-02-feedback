@@ -5,15 +5,33 @@ export default class Feedback extends Component {
 
   static propTypes = {};
 
+  handleGood = evt => {
+    console.log('Good button was clicked!', evt);
+  };
+
+  handleNeutral = evt => {
+    console.log('Neutral button was clicked!', evt);
+  };
+
+  handleBad = evt => {
+    console.log('Bad button was clicked!', evt);
+  };
+
   render() {
     return (
       <section className="feedback">
         <div className="service-assessment">
           <h2 className="title">Please leave feedback</h2>
 
-          <button type="button">Good</button>
-          <button type="button">Neutral</button>
-          <button type="button">Bad</button>
+          <button type="button" onClick={this.handleGood}>
+            Good
+          </button>
+          <button type="button" onClick={this.handleNeutral}>
+            Neutral
+          </button>
+          <button type="button" onClick={this.handleBad}>
+            Bad
+          </button>
         </div>
 
         <div className="statistics">
