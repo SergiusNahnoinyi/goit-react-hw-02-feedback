@@ -16,21 +16,11 @@ export default class Feedback extends Component {
     bad: 0,
   };
 
-  handleGood = () => {
-    this.setState(prevState => {
-      return { good: prevState.good + 1 };
-    });
-  };
+  handleClick = e => {
+    const { name } = e.currentTarget;
 
-  handleNeutral = () => {
     this.setState(prevState => {
-      return { neutral: prevState.neutral + 1 };
-    });
-  };
-
-  handleBad = () => {
-    this.setState(prevState => {
-      return { bad: prevState.bad + 1 };
+      return { [name]: prevState[name] + 1 };
     });
   };
 
@@ -41,7 +31,12 @@ export default class Feedback extends Component {
           <h2 className="title">Please leave feedback</h2>
           <div className="button-container">
             {Object.keys(this.state).map(key => (
-              <button key={key} type="button">
+              <button
+                key={key}
+                type="button"
+                name={key}
+                onClick={this.handleClick}
+              >
                 {key[0].toUpperCase() + key.substring(1)}
               </button>
             ))}
