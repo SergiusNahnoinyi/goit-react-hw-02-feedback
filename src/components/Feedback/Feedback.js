@@ -42,7 +42,7 @@ export default class Feedback extends Component {
           <div className="button-container">
             {Object.keys(this.state).map(key => (
               <button key={key} type="button">
-                {key}
+                {key[0].toUpperCase() + key.substring(1)}
               </button>
             ))}
           </div>
