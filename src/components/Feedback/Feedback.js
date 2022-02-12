@@ -52,9 +52,13 @@ export default class Feedback extends Component {
           <h2 className="title">Statistics</h2>
 
           <ul className="list">
-            <li className="item">Good:{this.state.good}</li>
-            <li className="item">Neutral:{this.state.neutral}</li>
-            <li className="item">Bad:{this.state.bad}</li>
+            {Object.entries(this.state).map(([key, value]) => {
+              return (
+                <li key={key} className="item">
+                  {key[0].toUpperCase() + key.substring(1)}: {value}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>
