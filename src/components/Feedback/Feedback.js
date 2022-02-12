@@ -39,16 +39,13 @@ export default class Feedback extends Component {
       <section className="feedback">
         <div className="service-assessment">
           <h2 className="title">Please leave feedback</h2>
-
-          <button type="button" onClick={this.handleGood}>
-            Good
-          </button>
-          <button type="button" onClick={this.handleNeutral}>
-            Neutral
-          </button>
-          <button type="button" onClick={this.handleBad}>
-            Bad
-          </button>
+          <div className="button-container">
+            {Object.keys(this.state).map(key => (
+              <button key={key} type="button">
+                {key}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="statistics">
