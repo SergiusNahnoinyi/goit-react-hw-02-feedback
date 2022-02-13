@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 export default function Statistics({ state, total, positivePercentage }) {
   return (
     <div className="statistics">
-      <h2 className="title">Statistics</h2>
-
       <ul className="list">
         {Object.entries(state).map(([key, value]) => {
           return (
