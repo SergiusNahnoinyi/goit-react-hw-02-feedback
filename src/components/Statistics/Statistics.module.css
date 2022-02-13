@@ -1,5 +1,6 @@
 .list {
   width: 220px;
+  margin-bottom: 20px;
   display: inline-flex;
   justify-content: space-between;
 }
