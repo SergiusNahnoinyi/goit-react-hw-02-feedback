@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import s from './Feedback.module.css';
 
 export default function FeedbackOptions({ state, onLeaveFeedback }) {
   return (
-    <div className="button-container">
+    <div className={s.container}>
       {Object.keys(state).map(key => (
         <button key={key} type="button" name={key} onClick={onLeaveFeedback}>
           {key[0].toUpperCase() + key.substring(1)}
