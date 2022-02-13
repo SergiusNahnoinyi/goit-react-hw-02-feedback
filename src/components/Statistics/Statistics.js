@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import s from './Statistics.module.css';
 
 export default function Statistics({ state, total, positivePercentage }) {
   return (
     <div className="statistics-container">
-      <ul className="list">
+      <ul className={s.list}>
         {Object.entries(state).map(([key, value]) => {
           return (
             <li key={key} className="item">
