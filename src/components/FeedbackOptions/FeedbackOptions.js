@@ -5,7 +5,7 @@ export default function FeedbackOptions({ state, onLeaveFeedback }) {
   return (
     <div className={s.container}>
       {Object.keys(state).map(key => (
-        <button key={key} type="button" name={key} onClick={onLeaveFeedback}>
+        <button key={key} type="button" onClick={() => onLeaveFeedback(key)}>
           {key[0].toUpperCase() + key.substring(1)}
         </button>
       ))}

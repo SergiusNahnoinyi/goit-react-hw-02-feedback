@@ -13,11 +13,9 @@ export default class App extends Component {
     bad: 0,
   };
 
-  handleClick = e => {
-    const { name } = e.currentTarget;
-
+  handleClick = key => {
     this.setState(prevState => {
-      return { [name]: prevState[name] + 1 };
+      return { [key]: prevState[key] + 1 };
     });
   };
 
